@@ -1,54 +1,25 @@
-site:
-  title: Muhammad Rusyadi Ramli
-  description: Academic portfolio of Muhammad Rusyadi Ramli, PhD Candidate at KTH Royal Institute of Technology
-  locale: en
+title: Muhammad Rusyadi Ramli
 
 author:
   name: Muhammad Rusyadi Ramli
   email: ramli2@kth.se
-  location: Stockholm, Sweden
   affiliation: KTH Royal Institute of Technology
   role: PhD Candidate
-  org_url: https://www.kth.se
+  location: Stockholm, Sweden
 
-# Appearance
+description: Personal academic website
+
 theme: academic
-defaultTheme: auto  # Options: light, dark, auto
+defaultTheme: auto
+
+logo:
+  text: Muhammad Rusyadi Ramli
 
 avatar:
+  image: avatar.jpg
   gravatar: false
-  image: avatar.jpg  # place this under `assets/media/avatar.jpg`
 
-# Footer text
-copyright:
-  notice: '© 2025 Muhammad Rusyadi Ramli. Powered by HugoBlox.'
-
-# Social links
 social:
   - icon: github
     icon_pack: fab
     link: https://github.com/ramli2
-
-  - icon: linkedin
-    icon_pack: fab
-    link: https://www.linkedin.com/in/ramli2/
-
-  - icon: google-scholar
-    icon_pack: ai
-    link: https://scholar.google.com/citations?user=yourID
-
-  - icon: envelope
-    icon_pack: fas
-    link: mailto:ramli2@kth.se
-
-# SEO
-seo:
-  google_analytics: ''  # You can add your tracking ID later
-  site_type: Person
-  local_business_type: EducationalOrganization
-
-header:
-  navbar:
-    logo:
-      text: Muhammad Rusyadi Ramli  # This shows in the top nav bar
-
