@@ -3,6 +3,7 @@
 title: ""
 date: 2022-10-24
 type: landing
+layout: widgets
 
 design:
   # Default section spacing
