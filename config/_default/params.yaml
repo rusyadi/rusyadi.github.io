@@ -46,3 +46,9 @@ seo:
   google_analytics: ''  # You can add your tracking ID later
   site_type: Person
   local_business_type: EducationalOrganization
+
+header:
+  navbar:
+    logo:
+      text: Muhammad Rusyadi Ramli  # This shows in the top nav bar
+
