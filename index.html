@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Rusyadi Ramli — Wallenberg-NTU Postdoctoral Fellow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --parchment: #f7f2e8; --parchment-d: #ede5d2; --white: #fdfaf4;
+      --gold: #b8892a; --gold-light: #f0e3c0; --gold-pale: #faf4e4;
+      --rust: #a0522d; --rust-light: #f5ece4;
+      --ink: #1e1810; --ink-mid: #4a3f30; --ink-light: #7a6e5e; --ink-muted: #a89880;
+      --border: #ddd0b3; --nav-h: 64px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; background: var(--parchment); color: var(--ink); font-size: 15px; line-height: 1.75; }
+    body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); opacity: 0.5; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: var(--nav-h); background: rgba(247,242,232,0.97); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; }
+    .nav-brand { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 600; color: var(--ink); text-decoration: none; }
+    .nav-brand span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--ink-mid); font-size: 0.79rem; font-weight: 500; letter-spacing: 0.09em; text-transform: uppercase; transition: color 0.2s; position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px; background: var(--gold); transform: scaleX(0); transition: transform 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+    .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--ink); }
+    .mobile-menu { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; background: var(--white); border-bottom: 1px solid var(--border); padding: 1rem 2rem; z-index: 199; flex-direction: column; }
+    .mobile-menu a { text-decoration: none; color: var(--ink-mid); font-size: 0.88rem; font-weight: 500; padding: 0.7rem 0; border-bottom: 1px solid var(--border); letter-spacing: 0.06em; text-transform: uppercase; }
+    .mobile-menu.open { display: flex; }
+    .page { position: relative; z-index: 1; margin-top: var(--nav-h); max-width: 1080px; margin-left: auto; margin-right: auto; padding: 0 2rem 6rem; }
+    .hero { display: grid; grid-template-columns: 220px 1fr; gap: 3.5rem; padding: 4rem 0 3.5rem; border-bottom: 1px solid var(--border); animation: fadeUp 0.6s ease both; }
+    .hero-photo-wrap { display: flex; flex-direction: column; align-items: center; gap: 1.2rem; }
+    .hero-photo { width: 190px; height: 190px; border-radius: 50%; background: var(--parchment-d); border: 5px solid var(--white); box-shadow: 0 6px 32px rgba(184,137,42,0.18), 0 2px 8px rgba(0,0,0,0.08); display: flex; align-items: center; justify-content: center; font-size: 5rem; color: var(--ink-muted); overflow: hidden; flex-shrink: 0; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-quick-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.45rem; }
+    .hero-quick-link { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0.28rem 0.65rem; border: 1px solid var(--border); border-radius: 20px; font-size: 0.77rem; font-weight: 500; color: var(--ink-mid); text-decoration: none; background: var(--white); transition: all 0.2s; white-space: nowrap; }
+    .hero-quick-link:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-pale); }
+    .hero-info { display: flex; flex-direction: column; justify-content: center; }
+    .hero-label { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.45rem; }
+    .hero-name { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.5rem; }
+    .hero-position { font-family: 'Source Serif 4', serif; font-size: 1.05rem; font-weight: 300; font-style: italic; color: var(--rust); margin-bottom: 0.2rem; }
+    .hero-affil { font-size: 0.88rem; color: var(--ink-light); margin-bottom: 1.5rem; line-height: 1.5; }
+    .hero-affil a { color: var(--ink-light); text-decoration: none; border-bottom: 1px solid var(--border); transition: color 0.2s; }
+    .hero-affil a:hover { color: var(--gold); border-color: var(--gold); }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 0.55rem; }
+    .badge { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.38rem 0.85rem; background: var(--gold-pale); border: 1px solid var(--gold-light); border-radius: 4px; font-size: 0.79rem; font-weight: 500; color: var(--ink-mid); }
+    .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+    .main-grid { display: grid; grid-template-columns: 1fr 300px; gap: 4rem; padding-top: 3.5rem; align-items: start; animation: fadeUp 0.6s 0.15s ease both; }
+    section { margin-bottom: 3.5rem; }
+    .section-head { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.4rem; }
+    .section-ornament { color: var(--gold); font-size: 0.85rem; opacity: 0.8; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600; color: var(--ink); }
+    .section-rule { flex: 1; height: 1px; background: linear-gradient(to right, var(--border), transparent); }
+    .bio { font-family: 'Source Serif 4', serif; font-size: 0.97rem; font-weight: 300; color: var(--ink-mid); }
+    .bio p { margin-bottom: 1rem; max-width: 64ch; }
+    .bio a { color: var(--rust); text-decoration: none; border-bottom: 1px solid #e0c0a0; transition: color 0.2s; }
+    .bio a:hover { color: var(--gold); }
+    .pub-filter { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.3rem; }
+    .pub-filter-btn { padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.78rem; font-weight: 500; cursor: pointer; border: 1px solid var(--border); background: var(--white); color: var(--ink-mid); transition: all 0.2s; }
+    .pub-filter-btn.active, .pub-filter-btn:hover { background: var(--gold-pale); border-color: var(--gold); color: var(--gold); }
+    .pub-list { display: flex; flex-direction: column; gap: 1.1rem; }
+    .pub-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 1.1rem 1.3rem; position: relative; transition: box-shadow 0.2s, border-color 0.2s; }
+    .pub-card[data-hidden="true"] { display: none; }
+    .pub-card:hover { border-color: var(--gold-light); box-shadow: 0 4px 18px rgba(184,137,42,0.1); }
+    .pub-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; border-radius: 6px 0 0 6px; background: var(--gold); opacity: 0; transition: opacity 0.2s; }
+    .pub-card:hover::before { opacity: 1; }
+    .pub-meta { display: flex; gap: 0.6rem; align-items: center; margin-bottom: 0.28rem; }
+    .pub-year { font-size: 0.71rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+    .pub-type { font-size: 0.69rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.1rem 0.5rem; border-radius: 3px; }
+    .pub-type.journal { background: #e8f0e4; color: #4a7a3a; }
+    .pub-type.conference { background: var(--rust-light); color: var(--rust); }
+    .pub-title { font-family: 'Playfair Display', serif; font-size: 0.92rem; font-weight: 600; color: var(--ink); line-height: 1.4; margin-bottom: 0.22rem; }
+    .pub-authors { font-size: 0.82rem; color: var(--ink-muted); margin-bottom: 0.18rem; }
+    .pub-authors strong { color: var(--ink-mid); font-weight: 600; }
+    .pub-venue { font-size: 0.82rem; color: var(--rust); font-style: italic; }
+    .teaching-list { display: flex; flex-direction: column; gap: 0.85rem; }
+    .teaching-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 1rem 1.2rem; }
+    .teaching-name { font-weight: 500; font-size: 0.93rem; color: var(--ink); margin-bottom: 0.1rem; }
+    .teaching-role { font-size: 0.82rem; color: var(--ink-light); }
+    .teaching-uni { font-size: 0.79rem; color: var(--ink-muted); margin-top: 0.1rem; }
+    .thesis-list { display: flex; flex-direction: column; gap: 0.85rem; }
+    .thesis-card { background: var(--white); border: 1px solid var(--border); border-radius: 6px; padding: 1rem 1.2rem; }
+    .thesis-title { font-family: 'Source Serif 4', serif; font-size: 0.87rem; font-style: italic; color: var(--ink-mid); margin-bottom: 0.15rem; line-height: 1.45; }
+    .thesis-meta { display: flex; justify-content: space-between; align-items: center; }
+    .thesis-student { font-size: 0.79rem; color: var(--ink-muted); }
+    .thesis-year { font-size: 0.72rem; color: var(--gold); font-weight: 500; }
+    .sidebar { display: flex; flex-direction: column; gap: 2.5rem; }
+    .interest-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .interest-list li { display: flex; align-items: flex-start; gap: 0.7rem; font-size: 0.89rem; color: var(--ink-mid); }
+    .interest-gem { width: 8px; height: 8px; border-radius: 1px; background: var(--gold); transform: rotate(45deg); flex-shrink: 0; margin-top: 6px; }
+    .timeline { display: flex; flex-direction: column; gap: 1.05rem; }
+    .tl-item { display: flex; gap: 0.85rem; align-items: flex-start; }
+    .tl-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 4px; }
+    .tl-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); border: 2px solid var(--white); box-shadow: 0 0 0 2px var(--gold-light); flex-shrink: 0; }
+    .tl-line { flex: 1; width: 1px; background: var(--border); margin: 4px 0; min-height: 16px; }
+    .tl-years { font-size: 0.74rem; color: var(--gold); font-weight: 500; margin-bottom: 0.05rem; }
+    .tl-title { font-size: 0.87rem; font-weight: 500; color: var(--ink); line-height: 1.3; }
+    .tl-place { font-size: 0.79rem; color: var(--ink-muted); }
+    .award-list { display: flex; flex-direction: column; gap: 0.7rem; }
+    .award-item { display: flex; gap: 0.7rem; align-items: flex-start; font-size: 0.85rem; color: var(--ink-mid); line-height: 1.5; }
+    .award-icon { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+    .contact-list { display: flex; flex-direction: column; gap: 0.55rem; }
+    .contact-row { display: flex; align-items: center; gap: 0.65rem; font-size: 0.85rem; color: var(--ink-mid); text-decoration: none; padding: 0.55rem 0.9rem; background: var(--white); border: 1px solid var(--border); border-radius: 5px; transition: all 0.2s; word-break: break-all; }
+    .contact-row:hover { border-color: var(--gold); color: var(--gold); }
+    .contact-icon { font-size: 0.95rem; width: 18px; text-align: center; flex-shrink: 0; }
+    footer { position: relative; z-index: 1; text-align: center; padding: 2rem 1rem; font-size: 0.79rem; color: var(--ink-muted); border-top: 1px solid var(--border); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 860px) { .main-grid { grid-template-columns: 1fr; gap: 0; } }
+    @media (max-width: 640px) { nav { padding: 0 1.3rem; } .nav-links { display: none; } .hamburger { display: flex; } .hero { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 0 2rem; text-align: center; } .hero-photo { margin: 0 auto; } .badge-row { justify-content: center; } .hero-name { font-size: 2rem; } .page { padding: 0 1.2rem 4rem; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#">Muhammad <span>Rusyadi</span> Ramli</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#research" onclick="toggleMenu()">Research</a>
+  <a href="#publications" onclick="toggleMenu()">Publications</a>
+  <a href="#teaching" onclick="toggleMenu()">Teaching</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+</div>
+
+<div class="page">
+  <div class="hero">
+    <div class="hero-photo-wrap">
+      <div class="hero-photo">👤<!-- Replace: <img src="photo.jpg" alt="Muhammad Rusyadi Ramli"> --></div>
+      <div class="hero-quick-links">
+        <a class="hero-quick-link" href="mailto:muhdrusyadi.ramli@ntu.edu.sg">✉ Email</a>
+        <a class="hero-quick-link" href="https://scholar.google.com" target="_blank">🎓 Scholar</a>
+        <a class="hero-quick-link" href="https://linkedin.com" target="_blank">💼 LinkedIn</a>
+        <a class="hero-quick-link" href="cv.pdf" target="_blank">📄 CV</a>
+      </div>
+    </div>
+    <div class="hero-info">
+      <div class="hero-label">Academic Profile</div>
+      <div class="hero-name">Muhammad Rusyadi Ramli</div>
+      <div class="hero-position">Wallenberg-NTU Postdoctoral Fellow</div>
+      <div class="hero-affil">
+        Division of Information Technology &amp; Operations Management<br>
+        <a href="https://www.ntu.edu.sg" target="_blank">Nanyang Technological University</a> · Singapore
+      </div>
+      <div class="badge-row">
+        <div class="badge"><div class="badge-dot"></div>Wallenberg-NTU Programme</div>
+        <div class="badge"><div class="badge-dot"></div>WASP Graduate School</div>
+        <div class="badge"><div class="badge-dot"></div>KTH · UC Berkeley · NTU</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-grid">
+    <div>
+
+      <section id="about">
+        <div class="section-head">
+          <span class="section-ornament">✦</span>
+          <h2 class="section-title">About Me</h2>
+          <div class="section-rule"></div>
+        </div>
+        <div class="bio">
+          <p>I am a Wallenberg-NTU Postdoctoral Fellow at the Division of Information Technology and Operations Management, <a href="https://www.ntu.edu.sg" target="_blank">Nanyang Technological University (NTU)</a>, Singapore. My fellowship is funded by the <a href="https://kaw.wallenberg.org" target="_blank">Knut and Alice Wallenberg Foundation</a>, covering full salary, living allowance, research allowance, and health insurance.</p>
+          <p>My research sits at the intersection of systems and software engineering, trustworthy cyber-physical systems (CPS), and human-centered collaborative engineering. I am particularly interested in how <em>boundary objects</em> — such as reference architectures and architectural frameworks — can bridge stakeholder viewpoints and facilitate trustworthy system co-engineering.</p>
+          <p>I completed my PhD at <a href="https://www.kth.se" target="_blank">KTH Royal Institute of Technology</a>, Sweden (2021–2025), in the Engineering Design Department, School of Industrial Technology and Management, and was an affiliated PhD student of the <a href="https://wasp-sweden.org" target="_blank">Wallenberg AI, Autonomous Systems and Software Program (WASP)</a> Graduate School. In Autumn 2023, I was a Visiting Student Researcher at the <a href="https://cltc.berkeley.edu" target="_blank">UC Berkeley Center for Long-Term Cybersecurity</a>, supported by the Karl Engvers Foundation.</p>
+          <p>I hold a Master of Engineering (IT Convergence Engineering, CGPA 4.25/4.50) from Kumoh National Institute of Technology, South Korea, and a Bachelor of Informatics Engineering <em>Cum Laude</em> (CGPA 3.57/4.00) from the University of Brawijaya, Indonesia.</p>
+        </div>
+      </section>
+
+      <section id="publications">
+        <div class="section-head">
+          <span class="section-ornament">✦</span>
+          <h2 class="section-title">Publications</h2>
+          <div class="section-rule"></div>
+        </div>
+        <div class="pub-filter">
+          <button class="pub-filter-btn active" onclick="filterPubs('all',this)">All</button>
+          <button class="pub-filter-btn" onclick="filterPubs('journal',this)">Journals</button>
+          <button class="pub-filter-btn" onclick="filterPubs('conference',this)">Conferences</button>
+        </div>
+        <div class="pub-list">
+
+          <div class="pub-card" data-type="journal">
+            <div class="pub-meta"><span class="pub-year">2026</span><span class="pub-type journal">Journal</span></div>
+            <div class="pub-title">Boundary Objects in the Development of Complex Cyber-Physical Systems: A Scoping Review</div>
+            <div class="pub-authors"><strong>Ramli, M.R.</strong> and Asplund, F.</div>
+            <div class="pub-venue">Heliyon, Volume 12, Issue 4, e44633</div>
+          </div>
+
+          <div class="pub-card" data-type="journal">
+            <div class="pub-meta"><span class="pub-year">2025</span><span class="pub-type journal">Journal</span></div>
+            <div class="pub-title">T-Framework: A Boundary Object for Facilitating Stakeholders Collaboration in Realizing Trustworthy Cyber-Physical Systems</div>
+            <div class="pub-authors"><strong>Ramli, M.R.</strong> and Asplund, F.</div>
+            <div class="pub-venue">Journal of Integrated Design and Process Science, p.10920617251364726</div>
+          </div>
+
+          <div class="pub-card" data-type="journal">
+            <div class="pub-meta"><span class="pub-year">2025</span><span class="pub-type journal">Journal</span></div>
+            <div class="pub-title">Reference Architectures as Boundary Objects in the Co-Engineering of System Properties: An Empirical Study</div>
+            <div class="pub-authors"><strong>Ramli, M.R.</strong> and Asplund, F.</div>
+            <div class="pub-venue">Journal of Systems and Software, p.112264</div>
+          </div>
+
+          <div class="pub-card" data-type="journal">
+            <div class="pub-meta"><span class="pub-year">2024</span><span class="pub-type journal">Journal</span></div>
+            <div class="pub-title">Digital Innovation Hubs and Portfolio of Their Services Across European Economies</div>
+            <div class="pub-authors">Gavkalova, N., Gładysz, B., Quadrini, W., Sassanelli, C., Asplund, F., <strong>Ramli, M.R.</strong>, et al.</div>
+            <div class="pub-venue">Oeconomia Copernicana, 15(1), 59–94</div>
+          </div>
+
+          <div class="pub-card" data-type="journal">
+            <div class="pub-meta"><span class="pub-year">2022</span><span class="pub-type journal">Journal</span></div>
+            <div class="pub-title">Finding Critical Scenarios for Automated Driving Systems: A Systematic Mapping Study</div>
+            <div class="pub-authors">Zhang, X., Tao, J., Tan, K., Törngren, M., Sánchez, J.M.G., <strong>Ramli, M.R.</strong>, et al.</div>
+            <div class="pub-venue">IEEE Transactions on Software Engineering, 49(3), pp.991–1026</div>
+          </div>
+
+          <div class="pub-card" data-type="journal">
+            <div class="pub-meta"><span class="pub-year">2022</span><span class="pub-type journal">Journal</span></div>
+            <div class="pub-title">Edge Computing for Cyber-Physical Systems: A Systematic Mapping Study Emphasizing Trustworthiness</div>
+            <div class="pub-authors">Sánchez, J.M.G., Jörgensen, N., Törngren, M., Inam, R., Berezovskyi, A., Feng, L., Fersman, E., <strong>Ramli, M.R.</strong> and Tan, K.</div>
+            <div class="pub-venue">ACM Transactions on Cyber-Physical Systems (TCPS), 6(3), pp.1–28</div>
+          </div>
+
+          <div class="pub-card" data-type="journal">
+            <div class="pub-meta"><span class="pub-year">2021</span><span class="pub-type journal">Journal</span></div>
+            <div class="pub-title">Hybrid MAC Protocol for UAV-Assisted Data Gathering in a Wireless Sensor Network</div>
+            <div class="pub-authors"><strong>Ramli, M.R.</strong>, Lee, J.M. and Kim, D.S.</div>
+            <div class="pub-venue">Internet of Things, 14, p.100088</div>
+          </div>
+
+          <div class="pub-card" data-type="journal">
+            <div class="pub-meta"><span class="pub-year">2021</span><span class="pub-type journal">Journal</span></div>
+            <div class="pub-title">Fog-Based Intelligent Transportation System for Traffic Light Optimization</div>
+            <div class="pub-authors"><strong>Ramli, M.R.</strong>, Sakir, R.K.A. and Kim, D.S.</div>
+            <div class="pub-venue">Proceedings of the Pakistan Academy of Sciences: A. Physical and Computational Sciences, 58(S), pp.29–35</div>
+          </div>
+
+          <div class="pub-card" data-type="journal">
+            <div class="pub-meta"><span class="pub-year">2020</span><span class="pub-type journal">Journal</span></div>
+            <div class="pub-title">IoT-Based Adaptive Network Mechanism for Reliable Smart Farm System</div>
+            <div class="pub-authors"><strong>Ramli, M.R.</strong>, Daely, P.T., Kim, D.S. and Lee, J.M.</div>
+            <div class="pub-venue">Computers and Electronics in Agriculture, 170, p.105287</div>
+          </div>
+
+          <div class="pub-card" data-type="conference">
+            <div class="pub-meta"><span class="pub-year">2025</span><span class="pub-type conference">Conference</span></div>
+            <div class="pub-title">Improving the Impact of Sustainability Engineering by Learning from the Safety and Innovation Discourses</div>
+            <div class="pub-authors">Chavez, Z., Asplund, F. and <strong>Ramli, M.R.</strong></div>
+            <div class="pub-venue">32nd International Conference on Transdisciplinary Engineering (TE 2025), Monterrey, Mexico</div>
+          </div>
+
+          <div class="pub-card" data-type="conference">
+            <div class="pub-meta"><span class="pub-year">2024</span><span class="pub-type conference">Conference</span></div>
+            <div class="pub-title">Aligning Stakeholders Viewpoints in Realizing Trustworthy CPS: Architectural Framework as a Boundary Object</div>
+            <div class="pub-authors"><strong>Ramli, M.R.</strong>, Asplund, F., Fornaro, G. and Törngren, M.</div>
+            <div class="pub-venue">31st International Conference on Transdisciplinary Engineering (TE 2024), London, UK</div>
+          </div>
+
+          <div class="pub-card" data-type="conference">
+            <div class="pub-meta"><span class="pub-year">2022</span><span class="pub-type conference">Conference</span></div>
+            <div class="pub-title">Towards an Architectural Framework and Method for Realizing Trustworthy Complex Cyber-Physical Systems</div>
+            <div class="pub-authors"><strong>Ramli, M.R.</strong> and Törngren, M.</div>
+            <div class="pub-venue">16th International Conference on Research Challenges in Information Science (RCIS 2022), Barcelona, Spain. CEUR-WS</div>
+          </div>
+
+          <div class="pub-card" data-type="conference">
+            <div class="pub-meta"><span class="pub-year">2021</span><span class="pub-type conference">Conference</span></div>
+            <div class="pub-title">Towards Reference Architectures for Trustworthy Collaborative Cyber-Physical Systems: Reference Architectures as Boundary Objects</div>
+            <div class="pub-authors"><strong>Ramli, M.R.</strong> and Törngren, M.</div>
+            <div class="pub-venue">17th European Dependable Computing Conference (EDCC 2021), Munich, Germany. Student Forum</div>
+          </div>
+
+          <div class="pub-card" data-type="conference">
+            <div class="pub-meta"><span class="pub-year">2020</span><span class="pub-type conference">Conference</span></div>
+            <div class="pub-title">UAV-Assisted Real-Time Data Processing Using Deep Q-Network for Industrial Internet of Things</div>
+            <div class="pub-authors">Sakir, R.K.A., <strong>Ramli, M.R.</strong>, Lee, J.M. and Kim, D.S.</div>
+            <div class="pub-venue">International Conference on AI in Information and Communication (ICAIIC 2020), Fukuoka, Japan. IEEE</div>
+          </div>
+
+          <div class="pub-card" data-type="conference">
+            <div class="pub-meta"><span class="pub-year">2019</span><span class="pub-type conference">Conference</span></div>
+            <div class="pub-title">Bio-Inspired Service Provisioning Scheme for Fog-Based Industrial Internet of Things</div>
+            <div class="pub-authors"><strong>Ramli, M.R.</strong>, Daely, P.T., Lee, J.M. and Kim, D.S.</div>
+            <div class="pub-venue">24th IEEE International Conference on Emerging Technologies and Factory Automation (ETFA 2019), Zaragoza, Spain. IEEE</div>
+          </div>
+
+          <div class="pub-card" data-type="conference">
+            <div class="pub-meta"><span class="pub-year">2019</span><span class="pub-type conference">Conference</span></div>
+            <div class="pub-title">Secure Ground Control Station-Based Routing Protocol for UAV Networks</div>
+            <div class="pub-authors">Agron, D.J.S., <strong>Ramli, M.R.</strong>, Lee, J.M. and Kim, D.S.</div>
+            <div class="pub-venue">International Conference on Information and Communication Technology Convergence (ICTC 2019), Jeju Island, South Korea. IEEE</div>
+          </div>
+
+          <div class="pub-card" data-type="conference">
+            <div class="pub-meta"><span class="pub-year">2019</span><span class="pub-type conference">Conference</span></div>
+            <div class="pub-title">Leveraging Biological Dragonfly Scheme for URLLC in Industrial Wireless Network</div>
+            <div class="pub-authors">Bhardwaj, S., <strong>Ramli, M.R.</strong> and Kim, D.S.</div>
+            <div class="pub-venue">Proceedings of ICICCD 2018, Dehradun, India. Springer Singapore</div>
+          </div>
+
+          <div class="pub-card" data-type="conference">
+            <div class="pub-meta"><span class="pub-year">2018</span><span class="pub-type conference">Conference</span></div>
+            <div class="pub-title">Bio-Inspired Scheme for Congestion Control in Wireless Sensor Networks</div>
+            <div class="pub-authors">Royyan, M., <strong>Ramli, M.R.</strong>, Lee, J.M. and Kim, D.S.</div>
+            <div class="pub-venue">14th IEEE International Workshop on Factory Communication Systems (WFCS 2018), Imperia, Italy. IEEE</div>
+          </div>
+
+        </div>
+      </section>
+
+      <section id="teaching">
+        <div class="section-head">
+          <span class="section-ornament">✦</span>
+          <h2 class="section-title">Teaching</h2>
+          <div class="section-rule"></div>
+        </div>
+        <div class="teaching-list">
+          <div class="teaching-card">
+            <div class="teaching-name">Degree Project in Mechatronics, Second Cycle</div>
+            <div class="teaching-role">Teacher</div>
+            <div class="teaching-uni">KTH Royal Institute of Technology, Sweden</div>
+          </div>
+          <div class="teaching-card">
+            <div class="teaching-name">Research and Methodology in Mechatronics</div>
+            <div class="teaching-role">Teacher</div>
+            <div class="teaching-uni">KTH Royal Institute of Technology, Sweden</div>
+          </div>
+          <div class="teaching-card">
+            <div class="teaching-name">Trustworthiness and Dependability in Edge-Based CPS</div>
+            <div class="teaching-role">Teaching Assistant</div>
+            <div class="teaching-uni">KTH Royal Institute of Technology, Sweden</div>
+          </div>
+          <div class="teaching-card">
+            <div class="teaching-name">Network Programming</div>
+            <div class="teaching-role">Teaching Assistant</div>
+            <div class="teaching-uni">Kumoh National Institute of Technology, South Korea</div>
+          </div>
+          <div class="teaching-card">
+            <div class="teaching-name">Undergraduate Capstone Design</div>
+            <div class="teaching-role">Teaching Assistant</div>
+            <div class="teaching-uni">Kumoh National Institute of Technology, South Korea</div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem;">
+          <div class="section-head">
+            <span class="section-ornament">✦</span>
+            <h3 class="section-title" style="font-size:1.05rem;">Master Thesis Supervision</h3>
+            <div class="section-rule"></div>
+          </div>
+          <div class="thesis-list">
+            <div class="thesis-card">
+              <div class="thesis-title">Performance metrics and velocity influence for point cloud registration in autonomous vehicles</div>
+              <div class="thesis-meta"><span class="thesis-student">Oscar Poveda Ruiz</span><span class="thesis-year">2023</span></div>
+            </div>
+            <div class="thesis-card">
+              <div class="thesis-title">Improving deep learning assisted far-field electromagnetic side channel attacks on AES: Effects on attack efficiency from using additive noise and other data augmentation techniques</div>
+              <div class="thesis-meta"><span class="thesis-student">Axel Zedigh</span><span class="thesis-year">2022</span></div>
+            </div>
+            <div class="thesis-card">
+              <div class="thesis-title">Investigation of MEMS-Based Acoustic Levitation for Pick-and-Place Machines</div>
+              <div class="thesis-meta"><span class="thesis-student">Alejandro Bergstrand &amp; Lukas Malm</span><span class="thesis-year">2021</span></div>
+            </div>
+            <div class="thesis-card">
+              <div class="thesis-title">Board and Chip Diversity in Deep Learning Side-Channel Attacks: On ATtiny85 Implementations Featuring Encryption and Communication</div>
+              <div class="thesis-meta"><span class="thesis-student">Filip Björklund &amp; Niklas Landin</span><span class="thesis-year">2021</span></div>
+            </div>
+            <div class="thesis-card">
+              <div class="thesis-title">Simulation and Physical Implementation of a Test Rig for Realistic Hail Impact Testing</div>
+              <div class="thesis-meta"><span class="thesis-student">Hanna Hermansson &amp; Almida Winquist, De Val</span><span class="thesis-year">2021</span></div>
+            </div>
+            <div class="thesis-card">
+              <div class="thesis-title">Emulation of Analog Front-End isoSPI Communication for Battery Management Systems</div>
+              <div class="thesis-meta"><span class="thesis-student">Julia Malachowska &amp; Miko Nore</span><span class="thesis-year">2021</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <section id="research">
+        <div class="section-head">
+          <span class="section-ornament">✦</span>
+          <h2 class="section-title">Research Interests</h2>
+        </div>
+        <ul class="interest-list">
+          <li><div class="interest-gem"></div>Human aspects in systems &amp; software engineering</li>
+          <li><div class="interest-gem"></div>Empirical studies of systems &amp; software engineering</li>
+          <li><div class="interest-gem"></div>AI-supported systems &amp; software engineering</li>
+          <li><div class="interest-gem"></div>Trustworthy cyber-physical systems (CPS)</li>
+          <li><div class="interest-gem"></div>Methods for requirements, design &amp; architecture</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="section-ornament">✦</span>
+          <h2 class="section-title">Positions</h2>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div><div class="tl-years">01/2026 – Present</div><div class="tl-title">Wallenberg-NTU Postdoctoral Fellow</div><div class="tl-place">Nanyang Technological University, Singapore</div></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div><div class="tl-years">09/2023 – 12/2023</div><div class="tl-title">Visiting Student Researcher</div><div class="tl-place">UC Berkeley Center for Long-Term Cybersecurity, USA</div></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div><div class="tl-years">01/2021 – 11/2025</div><div class="tl-title">Doctoral Student</div><div class="tl-place">KTH Royal Institute of Technology, Sweden</div></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot-col"><div class="tl-dot"></div></div>
+            <div><div class="tl-years">02/2019 – 02/2020</div><div class="tl-title">Researcher</div><div class="tl-place">Kumoh National Institute of Technology, South Korea</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="section-ornament">✦</span>
+          <h2 class="section-title">Education</h2>
+        </div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div><div class="tl-years">2021 – 2025</div><div class="tl-title">PhD, Engineering Design</div><div class="tl-place">KTH Royal Institute of Technology, Sweden</div></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+            <div><div class="tl-years">2017 – 2019</div><div class="tl-title">MEng, IT Convergence Engineering · CGPA 4.25/4.50</div><div class="tl-place">Kumoh National Institute of Technology, South Korea</div></div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot-col"><div class="tl-dot"></div></div>
+            <div><div class="tl-years">2012 – 2016</div><div class="tl-title">BEng, Informatics Engineering · Cum Laude, CGPA 3.57/4.00</div><div class="tl-place">University of Brawijaya, Indonesia</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <span class="section-ornament">✦</span>
+          <h2 class="section-title">Awards &amp; Grants</h2>
+        </div>
+        <div class="award-list">
+          <div class="award-item"><span class="award-icon">🏅</span><span>Knut &amp; Alice Wallenberg Foundation Postdoctoral Fellowship at NTU Singapore</span></div>
+          <div class="award-item"><span class="award-icon">🏅</span><span>Karl Engvers Foundation — research visit funding, UC Berkeley, Autumn 2023</span></div>
+          <div class="award-item"><span class="award-icon">🏅</span><span>IEEE IES Student &amp; Young Professional Travel Assistance Award — IEEE ETFA 2019, Zaragoza, Spain</span></div>
+          <div class="award-item"><span class="award-icon">🏅</span><span>BK21+ Research Scholarship — full ride scholarship for Master's degree at Kumoh NIT, 2017–2019</span></div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="section-head">
+          <span class="section-ornament">✦</span>
+          <h2 class="section-title">Contact</h2>
+        </div>
+        <div class="contact-list">
+          <a class="contact-row" href="mailto:muhdrusyadi.ramli@ntu.edu.sg"><span class="contact-icon">✉</span> muhdrusyadi.ramli@ntu.edu.sg</a>
+          <a class="contact-row" href="tel:+6584357957"><span class="contact-icon">📞</span> +65 8435 7957</a>
+          <a class="contact-row" href="#"><span class="contact-icon">📍</span> NTU, Singapore</a>
+          <a class="contact-row" href="https://scholar.google.com" target="_blank"><span class="contact-icon">🎓</span> Google Scholar</a>
+          <a class="contact-row" href="https://linkedin.com" target="_blank"><span class="contact-icon">💼</span> LinkedIn</a>
+          <a class="contact-row" href="https://orcid.org" target="_blank"><span class="contact-icon">🔗</span> ORCID</a>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2026 Muhammad Rusyadi Ramli &nbsp;·&nbsp; Wallenberg-NTU Postdoctoral Fellow &nbsp;·&nbsp; Nanyang Technological University
+</footer>
+
+<script>
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu'), ham = document.querySelector('.hamburger');
+    if (!menu.contains(e.target) && !ham.contains(e.target)) menu.classList.remove('open');
+  });
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const t = document.querySelector(this.getAttribute('href'));
+      if (t) { e.preventDefault(); window.scrollTo({ top: t.offsetTop - 76, behavior: 'smooth' }); }
+    });
+  });
+  function filterPubs(type, btn) {
+    document.querySelectorAll('.pub-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.pub-card').forEach(card => {
+      card[type === 'all' || card.dataset.type === type ? 'removeAttribute' : 'setAttribute']('data-hidden', 'true');
+    });
+  }
+</script>
+</body>
+</html>
